@@ -1,34 +1,21 @@
 import { createRoot } from 'react-dom/client'
 import App01 from './ch01/App01';
-
-
-const currentApp = "ch01_4";
+import App02 from './ch02/App02';
+import Counter from './ch02/Counter';
+import App02_pr from './practice/App02_pr';
+import App02_2 from './ch02/App02_2';
+import App02_3 from './ch02/App02_3';
 
 const appObj = {
     ch01: <App01 />,
-    ch01_1: <h1>ch01_1 렌더링</h1>,
-    ch01_2: BoxComponent(),
-    ch01_3: <BoxComponent/>,
-    ch01_4: <BoxComponent></BoxComponent>,
-
+    ch02: <App02 />,
+    ch02_2: <App02_2 />,
+    ch02_3: <App02_3 />,
+    counter: <Counter/>,
+    practice01: <App02_pr/>
 } 
 
-const root = document.getElementById('root');
-createRoot(root).render(appObj[currentApp]);
+// 최상위 부모 객체를 id로 가져옴
+// appObj.현재페이지
 
-function BoxComponent(){
-    // return <div>{TitleComponent({title:"타이틀",title2:"타이틀2"})}</div>
-    return <div><TitleComponent title="타이틀" title2="타이틀2"/></div>
-}
-
-// function TitleComponent(props){
-//     console.log(props.title);
-//     console.log(props.title2);
-//     return <h1></h1>
-// }
-
-function TitleComponent({title, title2}){ // 구조분해 가능
-    console.log(title);
-    console.log(title2);
-    return <h1>{title}</h1>
-}
+createRoot(document.getElementById('root')).render(appObj.ch02_3);

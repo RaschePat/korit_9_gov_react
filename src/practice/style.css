@@ -1,0 +1,146 @@
+.container {
+    width: 500px;
+    min-height: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(216, 191, 216, 1) 0%, rgba(209, 154, 209, 1) 100%);
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    background-color: rgb(240, 228, 240);
+}
+
+.input-container input {
+    width: 250px;
+    padding: 8px 12px;
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid #d19ad1;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.input-container input:focus {
+    outline: 2px solid #d19ad1;
+}
+
+.input-container input::placeholder {
+    color: #999;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 200px;
+}
+
+.register-button {
+    width: 80px;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(209, 154, 209);
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.register-button:hover {
+    background-color: rgb(209, 140, 209);
+}
+
+.reset-button {
+    width: 80px;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(209, 154, 209);
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.reset-button:hover {
+    background-color: rgb(209, 140, 209);
+}
+
+.table-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    background-color: rgb(240, 228, 240);
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container thead {
+    background-color: rgb(209, 154, 209);
+    color: white;
+}
+
+.table-container thead td {
+    padding: 10px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid #d19ad1;
+}
+
+.table-container thead td:first-child{
+    border-right: 1px solid rgb(240, 228, 240);
+}
+
+.table-container tbody td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #d19ad1;
+    background-color: white;
+}
+
+.table-container tbody tr:hover {
+    background-color: rgba(209, 154, 209, 0.1);
+}
+
+/* 테이블이 비어있을 때를 위한 스타일 (선택사항) */
+.table-container:empty::after {
+    content: "데이터가 없습니다";
+    display: block;
+    text-align: center;
+    color: #999;
+    padding: 20px;
+}
+
+.todo-button{
+    width: 80px;
+    padding: 4px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(209, 154, 209);
+    font-weight: 500;
+    font-size: 12px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
