@@ -1,0 +1,77 @@
+import axios from "axios";
+import { useState } from "react";
+
+function Axios02(){
+    const [ inputValue, setInputValue ] = useState({
+        username: "",
+    });
+
+    const [users, setUsers] = useState([]);
+
+    // 검색할 수 있는 요청 만들기
+    const getUsersApi = async () => {
+        // 주소 연결해서 응답 가져오기
+        const response = await axios.get("http://192.168.2.101:8080/users",{params: {username: inputValue.username}}); // , {} 조건 넣어주기
+        // 배열 응답 담기
+        setUsers(response.data);
+    }
+
+    const handleInputOnChange = (e) => {
+        const { name, value } = e.target;
+        setInputValue({
+            ...inputValue,
+            [name]: value,
+        })
+    }
+
+    // 값에 영향을 주지 않는 키 입력 ctrl, alt ...
+    const handleInputOnKeyDown = (e) => {
+        console.log(e)
+        if (e.keyCode === 13){
+            getUsersApi();
+        }
+
+    }
+
+    const handleSearchOnClick = () => {
+        getUsersApi();
+    }
+
+    return <>
+        <input type="text"
+            name="username"
+            value={inputValue.username}
+            onChange={handleInputOnChange}
+            onKeyDown={handleInputOnKeyDown}/>
+        <button onClick={handleSearchOnClick}>검색</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>username</th>
+                    <th>password</th>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>role1</th>
+                    <th>role2</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    users.map( u => <tr>
+                        <td>{u.username}</td>
+                        <td>{u.password}</td>
+                        <td>{u.name}</td>
+                        <td>{u.email}</td>
+                        <td>{u.roles[0]}</td>
+                        <td>{u.roles[1]}</td>
+                    </tr>)
+                }
+            </tbody>
+        </table>
+    </>
+}
+
+export default Axios02;
+
+
+        

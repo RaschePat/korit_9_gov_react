@@ -11,6 +11,10 @@ import Inputs from './ch02/Inputs';
 import SearchName from './ch02/SearchName';
 import UseEffect01 from './ch03/UseEffect01';
 import UseEffect03 from './ch03/UseEffect03';
+import UseEffect04 from './ch03/UseEffect04';
+import Axios01 from './ch04/Axios01';
+import Promise01 from './ch04/Promise01';
+import Axios02 from './ch04/Axios02';
 
 const appObj = {
     ch01: <App01 />,
@@ -19,15 +23,19 @@ const appObj = {
     ch02_3: <App02_3 />,
     ch02_4: <App02_4 />,
     ch02_5: <App02_5/>,
+    counter: <Counter/>,
     input: <Inputs/>,
     searchName: <SearchName/>,
     useEffect01: <UseEffect01/>,
     useEffect03: <UseEffect03/>,
-    counter: <Counter/>,
+    useEffect04: <UseEffect04/>,
+    axios01: <Axios01/>,
+    axios02: <Axios02/>,
+    promise01: <Promise01/>,
     practice01: <App02_pr/>
 } 
 
 // 최상위 부모 객체를 id로 가져옴
 // appObj.현재페이지
 
-createRoot(document.getElementById('root')).render(appObj.useEffect03);
+createRoot(document.getElementById('root')).render(appObj.axios02);
