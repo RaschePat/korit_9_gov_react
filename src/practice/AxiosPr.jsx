@@ -6,43 +6,40 @@ function AxiosPr(){
         username: "",
     });
 
-    const [users, setUsers] = useState([]);
+    const [ users, setUsers ] = useState([]);
 
-    // 검색할 수 있는 요청 만들기
+    // axios 가져오기
     const getUsersApi = async () => {
-        // 주소 연결해서 응답 가져오기
-        const response = await axios.get("http://192.168.2.101:8080/users",{params: {username: inputValue.username}}); // , {} 조건 넣어주기
-        // 배열 응답 담기
+        const response = await axios.get("http://192.168.2.101:8080/users",{params:{username : inputValue.username}});
         setUsers(response.data);
     }
 
     const handleInputOnChange = (e) => {
-        const { name, value } = e.target;
+        const {name, value} = e.target;
         setInputValue({
             ...inputValue,
-            [name]: value,
+            [name] : value,
         })
-    }
+    };
 
-    // 값에 영향을 주지 않는 키 입력 ctrl, alt ...
     const handleInputOnKeyDown = (e) => {
-        console.log(e)
-        if (e.keyCode === 13){
+        if(e.keyCode === 13){
             getUsersApi();
         }
-
-    }
+    };
 
     const handleSearchOnClick = () => {
         getUsersApi();
-    }
+    };
 
     return <>
         <input type="text"
             name="username"
             value={inputValue.username}
             onChange={handleInputOnChange}
-            onKeyDown={handleInputOnKeyDown}/>
+            onKeyDown={handleInputOnKeyDown}
+        
+        />
         <button onClick={handleSearchOnClick}>검색</button>
         <table>
             <thead>
@@ -57,7 +54,7 @@ function AxiosPr(){
             </thead>
             <tbody>
                 {
-                    users.map( u => <tr>
+                    users.map(u => <tr>
                         <td>{u.username}</td>
                         <td>{u.password}</td>
                         <td>{u.name}</td>
@@ -72,6 +69,3 @@ function AxiosPr(){
 }
 
 export default AxiosPr;
-
-
-        
