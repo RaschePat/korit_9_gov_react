@@ -20,6 +20,11 @@ import Axios04 from './ch04/Axios04';
 import Auth01 from './ch05/Auth01';
 import Auth02 from './ch05/Auth02';
 import Router01 from './ch06/Router01';
+import Router02 from './ch06/Router02';
+import Router03 from './ch06/Router03';
+import Router04 from './ch06/Router04';
+import Router05 from './ch06/Router05';
+import Css from './ch07/Css';
 
 const appObj = {
     ch01: <App01 />,
@@ -41,6 +46,11 @@ const appObj = {
     auth01: <Auth01/>,
     auth02: <Auth02/>,
     router01: <Router01 />,
+    router02: <Router02 />,
+    router03: <Router03 />,
+    router04: <Router04 />,
+    router05: <Router05 />,
+    css: <Css />,
     promise01: <Promise01/>,
     practice01: <App02_pr/>
 } 
@@ -48,4 +58,4 @@ const appObj = {
 // 최상위 부모 객체를 id로 가져옴
 // appObj.현재페이지
 
-createRoot(document.getElementById('root')).render(appObj.router01);
+createRoot(document.getElementById('root')).render(appObj.css);
