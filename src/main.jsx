@@ -25,6 +25,11 @@ import Router03 from './ch06/Router03';
 import Router04 from './ch06/Router04';
 import Router05 from './ch06/Router05';
 import Css from './ch07/Css';
+import Zustand01 from './ch08/Zustand01';
+import Zustand02 from './ch08/Zustand02';
+import Zustand03 from './ch08/Zustand03';
+import ReactQuery01 from './ch09/ReactQuery01';
+import ReactQuery02 from './ch09/ReactQuery02';
 
 const appObj = {
     ch01: <App01 />,
@@ -51,6 +56,11 @@ const appObj = {
     router04: <Router04 />,
     router05: <Router05 />,
     css: <Css />,
+    zunstand01: <Zustand01 />,
+    zunstand02: <Zustand02 />,
+    zunstand03: <Zustand03 />,
+    reactQuery01: <ReactQuery01 />,
+    reactQuery02: <ReactQuery02 />,
     promise01: <Promise01/>,
     practice01: <App02_pr/>
 } 
@@ -58,4 +68,4 @@ const appObj = {
 // 최상위 부모 객체를 id로 가져옴
 // appObj.현재페이지
 
-createRoot(document.getElementById('root')).render(appObj.css);
+createRoot(document.getElementById('root')).render(appObj.reactQuery02);
